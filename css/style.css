@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --primary-blue: #0047AB;
+    --neon-green: #39FF14;
+}
+
+body {
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--primary-blue);
+    background-size: 1000px 1500px;
+}
+
+.nav-link {
+    position: relative;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--neon-green);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--neon-green);
+}
+
+.main-title {
+    font-size: 80px;
+    line-height: 1;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    color: white;
+}
+
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    /* margin-top: 48px; */
+}
+
+.team-member {
+    display: flex;
+    gap: 16px;
+}
+
+.team-photo, .team-bio {
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.team-bio {
+    font-family: courier;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 0.1px;
+}
+
+.team-bio h3 {
+    font-family: monospace;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.team-bio p {
+    font-size: 18px;
+    font-style: bold;
+    overflow-y: auto;
+    max-height: 192px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: cover;
+    }
+
+    .team-bio {
+        padding: 12px;
+    }
+
+    .team-bio h3 {
+        font-size: 1.25rem;
+    }
+
+    .team-bio p {
+        font-size: 0.875rem;
+    }
+}
+
